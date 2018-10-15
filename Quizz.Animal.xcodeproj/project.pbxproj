@@ -14,6 +14,7 @@
 		94FA02CE216D19EF00EC66E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94FA02CC216D19EF00EC66E0 /* LaunchScreen.storyboard */; };
 		94FA02D6216F891F00EC66E0 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA02D5216F891F00EC66E0 /* QuestionViewController.swift */; };
 		94FA02D8216F894C00EC66E0 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA02D7216F894C00EC66E0 /* ResultsViewController.swift */; };
+		94FA02FA21710D6B00EC66E0 /* Quest Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA02F921710D6B00EC66E0 /* Quest Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		94FA02CF216D19EF00EC66E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94FA02D5216F891F00EC66E0 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		94FA02D7216F894C00EC66E0 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		94FA02F921710D6B00EC66E0 /* Quest Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quest Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				94FA02C3216D19EB00EC66E0 /* AppDelegate.swift */,
 				94FA02C5216D19EB00EC66E0 /* IntroductionViewController.swift */,
+				94FA02F921710D6B00EC66E0 /* Quest Data.swift */,
 				94FA02D5216F891F00EC66E0 /* QuestionViewController.swift */,
 				94FA02D7216F894C00EC66E0 /* ResultsViewController.swift */,
 				94FA02C7216D19EB00EC66E0 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94FA02C6216D19EB00EC66E0 /* IntroductionViewController.swift in Sources */,
+				94FA02FA21710D6B00EC66E0 /* Quest Data.swift in Sources */,
 				94FA02C4216D19EB00EC66E0 /* AppDelegate.swift in Sources */,
 				94FA02D6216F891F00EC66E0 /* QuestionViewController.swift in Sources */,
 				94FA02D8216F894C00EC66E0 /* ResultsViewController.swift in Sources */,
