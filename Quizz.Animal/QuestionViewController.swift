@@ -24,6 +24,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var rangedSlider: UISlider!
     
     @IBOutlet weak var progressView: UIProgressView!
+    
     @IBAction func singleButtonPressed(_ sender: UIButton) {
         let answers = questions[questionIndex].answers
         
@@ -85,7 +86,7 @@ class QuestionViewController: UIViewController {
         ),
         ]
     
-    var questionIndex = 0
+    var questionIndex = 0 // счетчик вопросов
     
     var answersChosen: [Answer] = []
     
@@ -129,10 +130,12 @@ class QuestionViewController: UIViewController {
         multipleStackView.isHidden = false
         for index in 0..<answers.count {
             multiLabels[index].text = answers[index].text
+            multiSwitches[index].isOn = false
         }
     }
     func updateRangedStack(using answers:[Answer]) {
         rangeStackView.isHidden = false
+        rangedSlider.setValue(0.5, animated: false)
         rangedLabels[0].text = answers.first?.text
         rangedLabels[1].text = answers.last?.text
     }
@@ -142,6 +145,12 @@ class QuestionViewController: UIViewController {
             updateUI()
         } else {
             performSegue(withIdentifier: "ResultsSegue", sender: nil)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ResultsSegue" {
+            let resultsViewController = segue.destination as! ResultsViewController // по умолчанию это вьюконтроллер, нам надо привести его к резалтсвьюконтроллер (восклицательный знак потому что мы уверены что переход по сегвею будет в резалтсвьюкоонтроллер
+            resultsViewController.responces = answersChosen
         }
     }
 }

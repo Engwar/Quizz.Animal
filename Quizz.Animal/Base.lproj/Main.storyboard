@@ -13,7 +13,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="Quizz_Animal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIButton">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -100,14 +100,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbk-9O-dQI">
                                         <rect key="frame" x="0.0" y="30" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonPressed:" destination="NOb-QZ-hYN" eventType="touchUpInside" id="Glh-Pk-SqI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAy-Kq-Bb0">
                                         <rect key="frame" x="0.0" y="60" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonPressed:" destination="NOb-QZ-hYN" eventType="touchUpInside" id="Fyf-AL-Uok"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIf-8l-VOJ">
                                         <rect key="frame" x="0.0" y="90" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButtonPressed:" destination="NOb-QZ-hYN" eventType="touchUpInside" id="pLc-NV-BbA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -126,13 +135,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EEu-lJ-6t6">
                                         <rect key="frame" x="0.0" y="49" width="288" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdi-xV-km5">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdi-xV-km5">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-If-nAu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-If-nAu">
                                                 <rect key="frame" x="58" y="0.0" width="230" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -246,7 +255,6 @@
                         <outlet property="progressView" destination="SbM-pK-Knv" id="adz-Kp-o94"/>
                         <outlet property="questionLabel" destination="OII-Nf-s5e" id="had-wc-oAC"/>
                         <outlet property="rangeStackView" destination="J1W-th-LNK" id="j0j-tX-zQD"/>
-                        <outlet property="ranged" destination="wcn-eR-8iW" id="QJq-V1-Gs9"/>
                         <outlet property="rangedSlider" destination="wcn-eR-8iW" id="yD9-sQ-e8o"/>
                         <outlet property="singleStackView" destination="a4t-Za-dim" id="MBL-pq-hMX"/>
                         <outletCollection property="singleButtons" destination="Tdf-0D-9qc" collectionClass="NSMutableArray" id="LRb-GG-rRI"/>
@@ -323,10 +331,19 @@
                         <viewLayoutGuide key="safeArea" id="yo3-DJ-BFd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Result" id="ROI-tC-xRY">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="wEC-gz-KbA"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="wEC-gz-KbA">
+                            <connections>
+                                <segue destination="DgC-Mk-lqz" kind="unwind" unwindAction="unwindWithSegue:" id="1iW-4m-vSN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="ERb-a3-WQi" id="rzC-kQ-KYT"/>
+                        <outlet property="resultDefinitionLabel" destination="f0N-tM-cP8" id="BdS-C2-YyT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oB4-hg-Veu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DgC-Mk-lqz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2761" y="133"/>
         </scene>
