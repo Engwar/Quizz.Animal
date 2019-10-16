@@ -30,9 +30,9 @@ enum AnimalType: Character {
     var definition: String {
         switch self {
         case .dog: return "You are dogy because you like party and so society"
-        case .cat: return " You liked live by youself, you liked walked by youself"
-        case .rabbit: return "You liked all fluffy. You are full of energy"
-        case .turtle: return " You are so clever and going to you goal"
+        case .cat: return " You like live by youself, you like walk by youself"
+        case .rabbit: return "You like all fluffy. You are full of energy"
+        case .turtle: return " You are so clever and going to you goal, slowly but purposely"
             
         }
     }

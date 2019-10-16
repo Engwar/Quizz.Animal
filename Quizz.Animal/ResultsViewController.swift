@@ -13,7 +13,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var resultAnswerLabel: UILabel!
     @IBOutlet weak var resultDefinitionLabel: UILabel!
     
-    var responces: [Answer]! //восклицательный знак это опционал (forced unwrapped), и означает, что мы уверены, что он будет не пустой когда мы к нему обратимся. Иначе будет ошибка времени исполнения
+    var responces: [Answer]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
